@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razor</title>
+    <link rel="stylesheet" href="style.css">  <!-- External stylesheet -->
+    <style>
+        /* Include your CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Background */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('ee.jpg');  /* Background image */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Dark Overlay (background only) */
+        body::before {
+            content: '';  /* Creates an empty element */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);  /* Initially fully transparent */
+            z-index: -1;  /* Makes sure it doesn't interfere with other elements */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* When scrolling, add the darkening effect on the background */
+        body.scrolled::before {
+            background-color: rgba(0, 0, 0, 0.5);  /* Darken the background */
+        }
+
+        /* Header */
+        header {
+            margin: 30px 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #9b00ff;
+        }
+
+        header p {
+            color: #b3b3b3;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            padding: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            margin: 40px 0;
+            width: 80%;
+        }
+
+        /* Image Container */
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Stack the items vertically */
+            gap: 50px; /* Increased gap to give more spacing between images */
+            justify-content: flex-start;
+            position: relative;
+            perspective: 1000px; /* Keeps the 3D effect */
+        }
+
+        /* Other CSS remains unchanged... */
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Razor Executor</h1>
+        <p>Your trusted executor for fast injection and execution.</p>
+    </header>
+
+    <!-- Buttons Section -->
+    <section class="button-container">
+        <!-- Navigate to URL Button with glowing effect -->
+        <a href="https://discord.gg/tK4TuegB67" class="button">Discord/Download</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-item">
+            <img src="sigma.png" alt="Fast Injection Icon">
+            <h3>Fast Injection</h3>
+            <p>Inject scripts quickly and efficiently.</p>
+        </div>
+        <audio autoplay loop>
+            <source src="music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="feature-item">
+            <img src="rizz.png" alt="Fast Execution Icon">
+            <h3>Fast Execution</h3>
+            <p>Very Fast at execution. And makes me want to CUM</p>
+        </div>
+        <div class="feature-item">
+            <img src="what.png" alt="Safe Icon">
+            <h3>Secure & Safe</h3>
+            <p>Not A Rat You Dumb Asshole.</p>
+        </div>
+    </section>
+
+    <!-- Image Gallery with Hover Glow -->
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="Coolness.png" alt="Image 1">
+                <figcaption>So Smooth But in Beta1.0</figcaption>
+            </div>
+            <div class="image-item">
+                <img src="evidence.png" alt="Image 2">
+                <figcaption>Uses Monaco for Better Experience</figcaption>
+            </div>
+            <div class="image-item">
+                <img src="evidence1.png" alt="Image 3">
+                <figcaption>Safe AS FUCK There is no detections at all:|</figcaption>
+            </div>
+            <div class="image-item">
+                <img src="fsjd0ifisd.png" alt="Image 4">
+                <figcaption>even the people during the war of 1812 agree!</figcaption>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll-Related JavaScript -->
+    <script>
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

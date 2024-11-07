@@ -1,0 +1,199 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('ee.jpg');  /* Background image */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Dark Overlay (background only) */
+body::before {
+    content: '';  /* Creates an empty element */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, var(--scroll-opacity, 0));  /* Initially transparent */
+    z-index: -1;  /* Makes sure it doesn't interfere with other elements */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Header */
+header {
+    margin: 30px 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #9b00ff;
+}
+
+header p {
+    color: #b3b3b3;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    width: 200px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(155, 0, 255, 0.3);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(155, 0, 255, 0.6);
+}
+
+.feature-item img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    color: #9b00ff;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+}
+
+/* Gallery Section */
+.gallery {
+    margin: 40px 0;
+    width: 80%;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: -20px;
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    gap: 50px; /* Increased gap to give more spacing between images */
+    justify-content: flex-start;
+    position: relative;
+    perspective: 1000px; /* Keeps the 3D effect */
+}
+
+/* Image Item */
+.image-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 835px;  /* Set the width to 835px */
+    height: 375px;  /* Set the height to 375px */
+    transform-style: preserve-3d; /* Keeps 3D effect */
+    max-width: 100%;  /* Ensure images don't overflow on smaller screens */
+}
+
+/* Random X-axis and Y-axis positioning for each image */
+.image-item:nth-child(1) {
+    transform: translateX(50px) translateY(30px); /* Random X and Y positions */
+}
+
+.image-item:nth-child(2) {
+    transform: translateX(400px) translateY(150px); /* Move image 2 further right */
+}
+
+.image-item:nth-child(3) {
+    transform: translateX(200px) translateY(250px); /* Random X and Y positions */
+}
+
+.image-item:nth-child(4) {
+    transform: translateX(600px) translateY(350px); /* Shift image 4 a bit to the right (not too far) */
+}
+
+/* Image Styling */
+.image-item img {
+    width: 100%;  /* Set width to 100% of container size */
+    height: 100%; /* Set height to 100% of container size */
+    object-fit: cover;  /* Ensures the image covers the space without distortion */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Caption Styling */
+.image-item figcaption {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 30px;  /* Increased margin for better spacing */
+    text-align: left;
+    transform: translateZ(50px);  /* Pushes the captions on the Z-axis for depth */
+    margin-top: 10px; /* Adjust to add space above caption */
+}
+
+/* Hover effect for images */
+.image-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px #9b00ff;
+}
+
+/* Audio Controls */
+audio {
+    display: none;  /* Hides the audio controls */
+}
+
+/* Button Styling */
+.button {
+    background-color: #9b00ff;  /* Glowing purple color */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #7a00cc;
+    box-shadow: 0 0 20px 5px #9b00ff;  /* Glowing effect */
+    transform: scale(1.05);  /* Slightly enlarges the button */
+}
+
+.button:active {
+    transform: scale(0.98);  /* Button clicks slightly shrink */
+}
